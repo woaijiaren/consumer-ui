@@ -24,6 +24,7 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
+              "src/CNAME",
               "src/MP_verify_GoHkRE7a3oTtijQr.txt",
               "src/assets"
             ],
