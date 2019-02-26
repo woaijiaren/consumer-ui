@@ -1,0 +1,57 @@
+@import "common";
+
+:host {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.col, .col-auto {
+  padding: 0;
+}
+
+main {
+  flex: auto;
+}
+
+a[href] {
+  &:active, &:focus, &:visited {
+    text-decoration: none;
+  }
+}
+
+header {
+  a {
+    color: white;
+  }
+
+  img.logo {
+    height: 36px;
+    vertical-align: middle;
+  }
+
+  .mat-toolbar.mat-primary {
+    flex: none;
+  }
+}
+
+footer {
+  &::ng-deep {
+    .mat-ink-bar {
+      bottom: auto;
+      top: 0;
+    }
+
+    .mat-tab-link {
+      flex: auto;
+      height: auto;
+      padding: 4px;
+
+      mat-icon {
+        font-size: 2em;
+        height: 48px !important;
+        width: 48px !important;
+      }
+    }
+  }
+}
