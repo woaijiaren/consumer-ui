@@ -2,4 +2,8 @@
 @import "reset";
 @import "bootstrap";
 @import "markdown";
-@import "app";
+
+app-root {
+  @import "material";
+  @import "app";
+}
