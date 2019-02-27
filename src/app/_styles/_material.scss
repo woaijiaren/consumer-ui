@@ -2,6 +2,11 @@
   display: block;
 }
 
-.mat-flat-button + .mat-flat-button {
+button[type] + button[type] {
   margin-left: 1em;
+}
+
+hr {
+  border-style: solid;
+  border-bottom: none;
 }

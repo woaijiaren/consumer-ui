@@ -1,49 +1,49 @@
 <mat-horizontal-stepper [linear]="true">
-  <mat-step [stepControl]="targetGroup">
-    <form [formGroup]="targetGroup">
+  <mat-step [stepControl]="workerGroup">
+    <form [formGroup]="workerGroup">
       <ng-template matStepLabel>需求</ng-template>
       <p>提示：填写时可借助输入法的语音识别功能</p>
       <mat-form-field>
         <mat-label>种类</mat-label>
-        <mat-select formControlName="kind" required>
-          <mat-option value="1">月嫂</mat-option>
-          <mat-option value="2">育儿嫂</mat-option>
-          <mat-option value="3">保姆</mat-option>
-          <mat-option value="4">小时工</mat-option>
+        <mat-select formControlName="workerType" required>
+          <mat-option value="YueSao">月嫂</mat-option>
+          <mat-option value="YuErSao">育儿嫂</mat-option>
+          <mat-option value="Maid">保姆</mat-option>
+          <mat-option value="HourlyWorker">小时工</mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field>
         <mat-label>年龄</mat-label>
-        <textarea matInput placeholder="请说明年龄范围" formControlName="age"></textarea>
+        <textarea matInput placeholder="请说明年龄范围" formControlName="workerAge"></textarea>
       </mat-form-field>
       <mat-form-field>
         <mat-label>籍贯</mat-label>
-        <textarea matInput placeholder="如东北人、南方人、北京人等" formControlName="region"></textarea>
+        <textarea matInput placeholder="如东北人、南方人、北京人等" formControlName="workerRegion"></textarea>
       </mat-form-field>
       <mat-form-field>
         <mat-label>其它</mat-label>
-        <textarea matInput placeholder="如文化程度、属相等要求，也可以等回访时告诉我们" formControlName="others"></textarea>
+        <textarea matInput placeholder="如文化程度、属相等要求，也可以等回访时告诉我们" formControlName="workerOthers"></textarea>
       </mat-form-field>
       <div>
-        <button mat-flat-button color="primary" matStepperNext>下一步</button>
+        <button type="submit" mat-flat-button color="primary" matStepperNext>下一步</button>
       </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="contactGroup">
-    <form [formGroup]="contactGroup">
+  <mat-step [stepControl]="customerGroup">
+    <form [formGroup]="customerGroup">
       <ng-template matStepLabel>电联</ng-template>
       <p>我们找到合适的候选人后会立即联系您</p>
       <mat-form-field>
         <mat-label>联系电话</mat-label>
-        <input type="tel" matInput formControlName="phone" required>
+        <input type="tel" matInput formControlName="customerPhone" required>
       </mat-form-field>
       <mat-form-field>
         <mat-label>您的称呼</mat-label>
-        <textarea matInput placeholder="如 李女士" formControlName="name" required></textarea>
+        <textarea matInput placeholder="如 李女士" formControlName="customerName" required></textarea>
       </mat-form-field>
       <div>
-        <button type="button" mat-flat-button matStepperPrevious>上一步</button>
-        <button mat-flat-button color="primary" matStepperNext>下一步</button>
+        <button type="button" mat-stroked-button matStepperPrevious>上一步</button>
+        <button type="submit" mat-flat-button color="primary" matStepperNext>下一步</button>
       </div>
     </form>
   </mat-step>
@@ -52,32 +52,37 @@
       <ng-template matStepLabel>面试</ng-template>
       <p>面试形式、地点等</p>
       <mat-form-field>
-        <textarea matInput placeholder="面试的方式，如见面、远程视频等" formControlName="channel"></textarea>
+        <mat-select formControlName="interviewChannelType">
+          <mat-option value="OnSite">现场面谈</mat-option>
+          <mat-option value="Video">远程视频</mat-option>
+        </mat-select>
       </mat-form-field>
       <mat-form-field>
-        <textarea matInput placeholder="您方便进行面试的时间" formControlName="time"></textarea>
+        <textarea matInput placeholder="您方便进行面试的时间" formControlName="interviewTime"></textarea>
       </mat-form-field>
       <mat-form-field>
-        <textarea matInput placeholder="您方便进行面试的地点" formControlName="place"></textarea>
+        <textarea matInput placeholder="您方便进行面试的地点" formControlName="interviewPlace"></textarea>
       </mat-form-field>
       <div>
-        <button type="button" mat-flat-button matStepperPrevious>上一步</button>
-        <button mat-flat-button color="primary" matStepperNext>下一步</button>
+        <button type="button" mat-stroked-button matStepperPrevious>上一步</button>
+        <button type="submit" mat-flat-button color="primary" matStepperNext>下一步</button>
       </div>
     </form>
   </mat-step>
   <mat-step>
     <ng-template matStepLabel>完成</ng-template>
-    <mat-card>
-      <mat-card-header>填写完毕</mat-card-header>
-      <mat-card-content>
-        <p>您填写的信息可以随时在 <a routerLink="/orders">订单页</a> 找到。</p>
-        <p>您可以在那里修改或取消预约</p>
-      </mat-card-content>
-    </mat-card>
-    <div>
-      <button type="button" mat-flat-button matStepperPrevious>上一步</button>
-      <button mat-flat-button color="primary">完成</button>
+    <div class="thank">
+      <p>填写完毕！</p>
+      <p>我们将开始按照这些要求为您物色人选，并联系您！</p>
+      <p>感谢您的信任！</p>
     </div>
+    <hr/>
+    <p>您填写的信息可以随时在 <a routerLink="/orders">订单页</a> 找到。</p>
+    <p>您还可以在那里修改或取消预约</p>
+    <hr/>
+    <p>
+      <button type="button" mat-stroked-button matStepperPrevious>上一步</button>
+      <button type="submit" mat-flat-button color="primary" (click)="submit()">完成</button>
+    </p>
   </mat-step>
 </mat-horizontal-stepper>

@@ -5,7 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutComponent } from './layout/layout.component';
-import { MatIconModule, MatListModule, MatSidenavModule, MatTabsModule, MatToolbarModule } from '@angular/material';
+import { MatIconModule, MatTabsModule, MatToolbarModule } from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { MockDb } from './core/mock/mock-db';
 
 @NgModule({
   declarations: [
@@ -16,11 +19,11 @@ import { MatIconModule, MatListModule, MatSidenavModule, MatTabsModule, MatToolb
     BrowserModule.withServerTransition({ appId: 'woaijiaren' }),
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatSidenavModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(MockDb, { passThruUnknownUrl: true, delay: 0 }),
     MatToolbarModule,
     MatTabsModule,
     MatIconModule,
-    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

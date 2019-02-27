@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { RequestFormApi } from '../api/request-form-api.service';
+import { MatSnackBar } from '@angular/material';
+import { switchMap } from 'rxjs/operators';
+import { ActivatedRoute, Router } from '@angular/router';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-create',
@@ -8,29 +13,41 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class RequestCreateComponent implements OnInit {
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private api: RequestFormApi,
+    private snackBar: MatSnackBar,
+    private router: Router, private route: ActivatedRoute,
+  ) {
   }
 
-  targetGroup: FormGroup;
-  contactGroup: FormGroup;
+  workerGroup: FormGroup;
+  customerGroup: FormGroup;
   interviewGroup: FormGroup;
 
   ngOnInit() {
-    this.targetGroup = this.fb.group({
-      kind: '',
-      age: '',
-      region: '',
-      others: '',
+    this.workerGroup = this.fb.group({
+      workerType: '',
+      workerAge: '',
+      workerRegion: '',
+      workerOthers: '',
     });
-    this.contactGroup = this.fb.group({
-      phone: '',
-      name: '',
+    this.customerGroup = this.fb.group({
+      customerPhone: '',
+      customerName: '',
     });
     this.interviewGroup = this.fb.group({
-      channel: '',
-      place: '',
-      time: '',
+      interviewChannelType: '',
+      interviewPlace: '',
+      interviewTime: '',
     });
   }
 
+  submit(): void {
+    const result = { ...this.workerGroup.value, ...this.customerGroup.value, ...this.interviewGroup.value };
+    this.api.create(result).pipe(
+      switchMap(() => this.snackBar.open('预约成功，即将跳转到预约列表！', '', { duration: 2000 }).afterDismissed()),
+      switchMap(() => from(this.router.navigateByUrl('/orders/list', { relativeTo: this.route }))),
+    ).subscribe();
+  }
 }

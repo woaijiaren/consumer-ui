@@ -7,6 +7,7 @@ import {
   MatInputModule,
   MatRadioModule,
   MatSelectModule,
+  MatSnackBarModule,
   MatStepperModule,
 } from '@angular/material';
 
@@ -23,6 +24,7 @@ import {
     MatRadioModule,
     MatSelectModule,
     MatCardModule,
+    MatSnackBarModule,
   ],
 })
 
