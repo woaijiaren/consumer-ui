@@ -4,11 +4,15 @@ import {
   MatButtonModule,
   MatCardModule,
   MatFormFieldModule,
+  MatIconModule,
   MatInputModule,
+  MatListModule,
   MatRadioModule,
   MatSelectModule,
+  MatSlideToggleModule,
   MatSnackBarModule,
   MatStepperModule,
+  MatToolbarModule,
 } from '@angular/material';
 
 @NgModule({
@@ -25,6 +29,10 @@ import {
     MatSelectModule,
     MatCardModule,
     MatSnackBarModule,
+    MatListModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatSlideToggleModule,
   ],
 })
 

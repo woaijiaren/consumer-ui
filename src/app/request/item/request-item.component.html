@@ -1,0 +1,30 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      {{item.timeCreated | date}}
+      <strong>{{item.status | requestStatus}}</strong>
+    </mat-card-title>
+  </mat-card-header>
+  <hr/>
+  <mat-card-content>
+    <p>
+      我要找<strong>{{item.workerType | workerType}}</strong>，要求：
+    </p>
+    <p *ngIf="item.workerAge">年龄：<strong>{{item.workerAge}}</strong></p>
+    <p *ngIf="item.workerRegion">籍贯：<strong>{{item.workerRegion}}</strong></p>
+    <p *ngIf="item.workerOthers">其它：<strong>{{item.workerOthers}}</strong></p>
+    <hr/>
+    <p>如果找到合适的人选，请联系：</p>
+    <p><strong>{{item.customerName}}({{item.customerPhone}})</strong></p>
+    <p *ngIf="item.interviewChannelType">我希望以<strong>{{item.interviewChannelType| interviewChannelType}}</strong>的形式面试
+    </p>
+    <p *ngIf="item.interviewPlace">面试地点<strong>{{item.interviewPlace}}</strong></p>
+    <p *ngIf="item.interviewTime">面试时段<strong>{{item.interviewTime}}</strong></p>
+  </mat-card-content>
+  <hr/>
+  <mat-card-actions align="center">
+    <button type="button" mat-raised-button color="warn">取消</button>
+    <button type="button" mat-raised-button>催一下</button>
+    <button type="button" mat-raised-button color="primary">修改</button>
+  </mat-card-actions>
+</mat-card>

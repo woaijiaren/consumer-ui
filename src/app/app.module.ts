@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
+import localeCn from '@angular/common/locales/zh-Hans';
+import localeCnExtra from '@angular/common/locales/extra/zh-Hans';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +11,9 @@ import { MatIconModule, MatTabsModule, MatToolbarModule } from '@angular/materia
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { MockDb } from './core/mock/mock-db';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(localeCn, 'zh-Hans', localeCnExtra);
 
 @NgModule({
   declarations: [
@@ -25,7 +30,7 @@ import { MockDb } from './core/mock/mock-db';
     MatTabsModule,
     MatIconModule,
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'zh-Hans' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {

@@ -1,14 +1,6 @@
-export enum WorkerType {
-  YueSao = 'YueSao',
-  YuErSao = 'YuErSao',
-  Maid = 'Maid',
-  HourlyWorker = 'HourlyWorker',
-}
-
-export enum InterviewChannelType {
-  OnSite = 'OnSite',
-  Video = 'Video',
-}
+import { WorkerType } from './worker-types';
+import { InterviewChannelType } from './interview-channel-types';
+import { RequestStatus } from './request-status';
 
 export class RequestForm {
   id?: number;
@@ -22,4 +14,5 @@ export class RequestForm {
   interviewChannelType: InterviewChannelType;
   interviewPlace: string;
   interviewTime: string;
+  status: RequestStatus;
 }

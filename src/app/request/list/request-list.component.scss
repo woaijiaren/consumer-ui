@@ -1,0 +1,24 @@
+@import "common";
+
+:host {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+mat-toolbar {
+  flex: none;
+}
+
+.list {
+  flex: auto;
+  overflow: auto;
+}
+
+app-request-item {
+  margin-bottom: 1em;
+}
+
+mat-slide-toggle {
+  margin-left: 1em;
+}

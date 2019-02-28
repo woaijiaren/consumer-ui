@@ -47,7 +47,7 @@ export class RequestCreateComponent implements OnInit {
     const result = { ...this.workerGroup.value, ...this.customerGroup.value, ...this.interviewGroup.value };
     this.api.create(result).pipe(
       switchMap(() => this.snackBar.open('预约成功，即将跳转到预约列表！', '', { duration: 2000 }).afterDismissed()),
-      switchMap(() => from(this.router.navigateByUrl('/orders/list', { relativeTo: this.route }))),
+      switchMap(() => from(this.router.navigateByUrl('./list', { relativeTo: this.route }))),
     ).subscribe();
   }
 }
