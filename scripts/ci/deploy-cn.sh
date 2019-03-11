@@ -12,6 +12,8 @@ kill `lsof -t -i :4000` || true
 
 npx http-server-spa dist/woaijiaren index.html 4000 &
 
+sleep 3
+
 rm -fr ./prerender || true
 
 npx prerender mirror -r ./prerender http://localhost:4000/
