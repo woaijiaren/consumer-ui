@@ -1,11 +1,11 @@
-import { WorkerType } from './worker-types';
+import { BusinessType } from './business-types';
 import { InterviewChannelType } from './interview-channel-types';
 import { RequestStatus } from './request-status';
 
 export class RequestForm {
   id?: number;
   timeCreated: Date;
-  workerType: WorkerType;
+  businessType: BusinessType;
   workerAge: string;
   workerRegion: string;
   workerOthers: string;

@@ -1,14 +1,14 @@
-<mat-card>
+<mat-card *ngIf="visible">
   <mat-card-header>
     <mat-card-title>
-      {{item.timeCreated | date}}
+      #{{index}} - {{item.timeCreated | date}}
       <strong>{{item.status | requestStatus}}</strong>
     </mat-card-title>
   </mat-card-header>
   <hr/>
   <mat-card-content>
     <p>
-      我要找<strong>{{item.workerType | workerType}}</strong>，要求：
+      我要找<strong>{{item.businessType | businessType}}</strong>，要求：
     </p>
     <p *ngIf="item.workerAge">年龄：<strong>{{item.workerAge}}</strong></p>
     <p *ngIf="item.workerRegion">籍贯：<strong>{{item.workerRegion}}</strong></p>
@@ -23,8 +23,8 @@
   </mat-card-content>
   <hr/>
   <mat-card-actions align="center">
-    <button type="button" mat-raised-button color="warn">取消</button>
+    <button type="button" mat-raised-button color="warn" (click)="cancel()">取消</button>
     <button type="button" mat-raised-button>催一下</button>
-    <button type="button" mat-raised-button color="primary">修改</button>
+    <button type="button" mat-raised-button color="primary" [routerLink]="[item.id, 'edit']">修改</button>
   </mat-card-actions>
 </mat-card>

@@ -3,5 +3,7 @@
   <mat-slide-toggle [formControl]="onlyActive">只看未完成的</mat-slide-toggle>
 </mat-toolbar>
 <div class="list">
-  <app-request-item *ngFor="let item of items" [item]="item"></app-request-item>
+  <ng-container *ngFor="let item of items; let index = index">
+    <app-request-item [item]="item" [index]="index + 1" [onlyActive]="onlyActive.value"></app-request-item>
+  </ng-container>
 </div>

@@ -1,4 +1,4 @@
-import { EnumMap } from '../../shared/utils/enum-map';
+import { EnumMap } from '../utils/enum-map';
 
 export enum RequestStatus {
   Requested,

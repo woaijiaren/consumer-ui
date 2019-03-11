@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { RequestForm } from '../models/request-form';
+import { RequestForm } from '../../shared/models/request-form';
+import { RequestStatus } from '../../shared/models/request-status';
 
 @Component({
   selector: 'app-request-item',
@@ -14,7 +15,16 @@ export class RequestItemComponent implements OnInit {
   @Input()
   item: RequestForm;
 
+  @Input()
+  onlyActive = true;
+
+  @Input()
+  index: number;
+
   ngOnInit() {
   }
 
+  get visible(): boolean {
+    return !this.onlyActive || this.item.status !== RequestStatus.Canceled && this.item.status !== RequestStatus.Closed;
+  }
 }

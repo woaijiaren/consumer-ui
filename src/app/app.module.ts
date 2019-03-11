@@ -10,7 +10,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { MatIconModule, MatTabsModule, MatToolbarModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { MockDb } from './core/mock/mock-db';
+import { MockDb } from './shared/mock/mock-db';
 import { registerLocaleData } from '@angular/common';
 
 registerLocaleData(localeCn, 'zh-Hans', localeCnExtra);

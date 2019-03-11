@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RequestFormApi } from '../api/request-form-api.service';
-import { RequestForm } from '../models/request-form';
+import { RequestForm } from '../../shared/models/request-form';
 import { FormControl } from '@angular/forms';
 
 @Component({

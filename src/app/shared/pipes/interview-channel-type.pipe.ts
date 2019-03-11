@@ -8,5 +8,4 @@ export class InterviewChannelTypePipe implements PipeTransform {
   transform(value: InterviewChannelType): string {
     return interviewChannelTypes.lookup(value);
   }
-
 }

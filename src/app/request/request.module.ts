@@ -8,20 +8,18 @@ import { SharedModule } from '../shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RequestListComponent } from './list/request-list.component';
 import { RequestHomeComponent } from './home/request-home.component';
-import { WorkerTypePipe } from './pipes/worker-type.pipe';
-import { InterviewChannelTypePipe } from './pipes/interview-channel-type.pipe';
 import { RequestItemComponent } from './item/request-item.component';
-import { RequestStatusPipe } from './pipes/request-status.pipe';
+import { EditComponent } from './edit/edit.component';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
     RequestCreateComponent,
     RequestListComponent,
     RequestHomeComponent,
-    WorkerTypePipe,
-    InterviewChannelTypePipe,
     RequestItemComponent,
-    RequestStatusPipe,
+    EditComponent,
+    FormComponent,
   ],
 
   imports: [

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { RequestForm } from '../models/request-form';
+import { RequestForm } from '../../shared/models/request-form';
 import { Observable } from 'rxjs';
 
 @Injectable({
