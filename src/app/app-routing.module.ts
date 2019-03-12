@@ -5,7 +5,7 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'news/1/show',
+    redirectTo: 'requests',
   },
   {
     path: 'requests',
@@ -24,8 +24,8 @@ const routes: Routes = [
     loadChildren: './profile/profile.module#ProfileModule',
   },
   {
-    path: 'news',
-    loadChildren: './news/news.module#NewsModule',
+    path: 'article',
+    loadChildren: './article/article.module#ArticleModule',
   },
 ];
 
