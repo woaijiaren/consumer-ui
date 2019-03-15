@@ -13,6 +13,7 @@ import {
   MatSnackBarModule,
   MatStepperModule,
   MatTableModule,
+  MatTabsModule,
   MatToolbarModule,
 } from '@angular/material';
 
@@ -33,6 +34,7 @@ import {
     MatListModule,
     MatIconModule,
     MatToolbarModule,
+    MatTabsModule,
     MatSlideToggleModule,
     MatTableModule,
   ],
