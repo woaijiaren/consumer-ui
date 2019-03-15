@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ArticleApi } from '../api/article-api.service';
 import { ActivatedRoute } from '@angular/router';
 import { map, switchMap, tap } from 'rxjs/operators';
@@ -13,7 +13,6 @@ export class ArticleShowComponent implements OnInit {
 
   article: ArticleModel;
 
-  @ViewChild('viewer')
   constructor(private api: ArticleApi, private route: ActivatedRoute) {
   }
 

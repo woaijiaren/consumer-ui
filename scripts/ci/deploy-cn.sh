@@ -16,15 +16,15 @@ sleep 3
 
 rm -fr ./prerender || true
 
-npx prerender mirror -r ./prerender http://localhost:4000/news/1/show
+npx prerender mirror -r ./prerender http://localhost:4000/articles/1
 
 kill `lsof -t -i :4000` || true
 
-rm -fr ./prebuilt || true
+rm -fr ./preview || true
 
-git clone https://asnowwolf:${GITHUB_ACCESS_TOKEN}@github.com/asnowwolf/5aijiaren.com-prebuilt.git prebuilt
+git clone https://asnowwolf:${GITHUB_ACCESS_TOKEN}@github.com/woaijiaren/consumer-ui-preview.git preview
 
-cd ./prebuilt
+cd ./preview
 
 cp -r ../dist/consumer-ui/* .
 
