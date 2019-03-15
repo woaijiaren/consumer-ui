@@ -21,7 +21,7 @@ registerLocaleData(localeCn, 'zh-Hans', localeCnExtra);
     LayoutComponent,
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'woaijiaren' }),
+    BrowserModule.withServerTransition({ appId: 'consumer-ui' }),
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,

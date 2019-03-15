@@ -10,7 +10,7 @@ commitMessage=$(git log --oneline -n 1)
 
 kill `lsof -t -i :4000` || true
 
-npx http-server-spa dist/woaijiaren index.html 4000 &
+npx http-server-spa dist/consumer-ui index.html 4000 &
 
 sleep 3
 
@@ -26,7 +26,7 @@ git clone https://asnowwolf:${GITHUB_ACCESS_TOKEN}@github.com/asnowwolf/5aijiare
 
 cd ./prebuilt
 
-cp -r ../dist/woaijiaren/* .
+cp -r ../dist/consumer-ui/* .
 
 cp index.html 404.html
 
