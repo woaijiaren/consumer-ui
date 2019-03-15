@@ -8,6 +8,8 @@ import * as ordersIcon from '!!raw-loader!./icons/orders.svg';
 // @ts-ignore
 import * as servicesIcon from '!!raw-loader!./icons/services.svg';
 // @ts-ignore
+import * as articlesIcon from '!!raw-loader!./icons/articles.svg';
+// @ts-ignore
 import * as profileIcon from '!!raw-loader!./icons/profile.svg';
 
 @Component({
@@ -20,6 +22,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
     iconRegistry.addSvgIconLiteral('requests', sanitizer.bypassSecurityTrustHtml(requestsIcon));
     iconRegistry.addSvgIconLiteral('orders', sanitizer.bypassSecurityTrustHtml(ordersIcon));
     iconRegistry.addSvgIconLiteral('services', sanitizer.bypassSecurityTrustHtml(servicesIcon));
+    iconRegistry.addSvgIconLiteral('articles', sanitizer.bypassSecurityTrustHtml(articlesIcon));
     iconRegistry.addSvgIconLiteral('profile', sanitizer.bypassSecurityTrustHtml(profileIcon));
   }
 
@@ -30,14 +33,19 @@ export class LayoutComponent implements OnInit, OnDestroy {
       label: '预约',
     },
     {
+      path: '/services',
+      icon: 'services',
+      label: '服务',
+    },
+    {
       path: '/orders',
       icon: 'orders',
       label: '订单',
     },
     {
-      path: '/services',
-      icon: 'services',
-      label: '服务',
+      path: '/articles',
+      icon: 'articles',
+      label: '文章',
     },
     {
       path: '/profile',

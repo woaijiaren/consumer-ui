@@ -11,6 +11,10 @@ const routes: Routes = [
     children: [
       {
         path: '',
+        redirectTo: 'list',
+      },
+      {
+        path: 'list',
         component: ArticleListComponent,
         data: {
           title: '文章列表',

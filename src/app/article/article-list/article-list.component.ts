@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticleApi } from '../api/article-api.service';
+import { ArticleModel } from '../api/article.model';
 
 @Component({
   selector: 'app-article-list',
@@ -7,10 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticleListComponent implements OnInit {
 
-  constructor() {
+  items: ArticleModel[] = [];
+
+  constructor(private api: ArticleApi) {
   }
 
   ngOnInit() {
+    this.api.query().subscribe(items => this.items = items);
   }
 
 }
