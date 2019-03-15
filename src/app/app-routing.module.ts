@@ -6,6 +6,9 @@ const routes: Routes = [
   {
     path: '',
     canActivateChild: [SetTitleGuard],
+    data: {
+      title: '我爱家人网',
+    },
     children: [
       {
         path: '',
@@ -29,7 +32,7 @@ const routes: Routes = [
         loadChildren: './profile/profile.module#ProfileModule',
       },
       {
-        path: 'article',
+        path: 'articles',
         loadChildren: './article/article.module#ArticleModule',
       },
     ],

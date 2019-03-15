@@ -12,10 +12,16 @@ const routes: Routes = [
       {
         path: '',
         component: ArticleListComponent,
+        data: {
+          title: '文章列表',
+        },
       },
       {
-        path: ':id/show',
+        path: ':id',
         component: ArticleShowComponent,
+        data: {
+          title: '文章详情',
+        },
       },
     ],
   },
