@@ -1,1 +1,1 @@
-<div [innerHTML]="article"></div>
+<div *ngIf="article" class="markdown-viewer" [innerHTML]="article.content|safeHtml" appArticleTitle></div>

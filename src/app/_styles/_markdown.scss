@@ -1,6 +1,8 @@
 @import "./common";
 
-app-markdown-viewer {
+.markdown-viewer {
+  display: block;
+  padding: 0.5rem;
   /*
    * NOTE:
    * - The use of browser-specific styles (-moz-, -webkit-) should be avoided.
