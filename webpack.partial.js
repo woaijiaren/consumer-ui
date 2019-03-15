@@ -1,4 +1,9 @@
+const ImageminPlugin = require('imagemin-webpack-plugin');
+
 module.exports = {
+  plugins: [
+    new ImageminPlugin({test: 'src/app/shared/mock/**'}),
+  ],
   module: {
     rules: [
       {
