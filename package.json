@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --extra-webpack-config webpack.partial.js",
-    "build": "ng build --extra-webpack-config webpack.partial.js --prod",
+    "start": "node $NODE_DEBUG_OPTION ./node_modules/.bin/ng serve --plugin ~build/plugin.js",
+    "build": "ng build --plugin ~build/plugin.js --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
