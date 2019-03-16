@@ -1,5 +1,7 @@
 <mat-list>
   <mat-list-item *ngFor="let item of items">
-    <a [routerLink]="['..', item.id]">{{item.title}}</a>
+    <mat-icon matListIcon>{{item.icon || 'chat_bubble_outline'}}</mat-icon>
+    <a matLine [routerLink]="['..', item.id]">{{item.title}}</a>
+    <mat-icon>chevron_right</mat-icon>
   </mat-list-item>
 </mat-list>
