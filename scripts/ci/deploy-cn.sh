@@ -14,23 +14,23 @@ npx http-server-spa dist/consumer-ui index.html 4000 &
 
 sleep 3
 
-rm -fr ./prerender || true
+rm -fr /tmp/prerender || true
 
-npx prerender mirror -r ./prerender http://localhost:4000/articles/1
+npx prerender mirror -r /tmp/prerender http://localhost:4000/articles/1
 
 kill `lsof -t -i :4000` || true
 
-rm -fr ./preview || true
+rm -fr /tmp/preview || true
 
-git clone https://asnowwolf:${GITHUB_ACCESS_TOKEN}@github.com/woaijiaren/consumer-ui-preview.git preview
+git clone https://asnowwolf:${GITHUB_ACCESS_TOKEN}@github.com/woaijiaren/consumer-ui-preview.git /tmp/preview
 
-cd ./preview
+cd /tmp/preview
 
 cp -r ../dist/consumer-ui/* .
 
 cp index.html 404.html
 
-cp -r ../prerender/localhost:4000/* .
+cp -r /tmp/prerender/localhost:4000/* .
 
 git add .
 git commit --allow-empty -am "${commitMessage}" || true
