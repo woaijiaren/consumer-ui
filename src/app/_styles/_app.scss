@@ -1,1 +1,14 @@
 @import "common";
+
+.mat-form-field {
+  display: block;
+}
+
+button[type] + button[type] {
+  margin-left: 1em;
+}
+
+hr {
+  border-style: solid;
+  border-bottom: none;
+}
