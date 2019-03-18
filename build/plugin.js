@@ -12,13 +12,19 @@ exports.default = {
     };
 
     const markdownLoader = {
-      test: /\.md$/,
+      test: /\bmock\/.*\.md$/,
       use: [
         {loader: 'html-loader'},
         {loader: 'markdown-loader'},
       ],
     };
-    cfg.module.rules.push(markdownLoader, jpegLoader);
+    const htmlLoader = {
+      test: /\bmock\/.*\.html$/,
+      use: [
+        {loader: 'html-loader'},
+      ],
+    };
+    cfg.module.rules.push(markdownLoader, jpegLoader, htmlLoader);
 
     return cfg;
   },
