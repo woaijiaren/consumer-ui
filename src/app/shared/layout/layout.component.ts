@@ -11,6 +11,8 @@ import * as servicesIcon from '!!raw-loader!./icons/services.svg';
 import * as articlesIcon from '!!raw-loader!./icons/articles.svg';
 // @ts-ignore
 import * as profileIcon from '!!raw-loader!./icons/profile.svg';
+// @ts-ignore
+import * as logoIcon from '!!raw-loader!./icons/logo.svg';
 
 @Component({
   selector: 'app-layout',
@@ -24,6 +26,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
     iconRegistry.addSvgIconLiteral('services', sanitizer.bypassSecurityTrustHtml(servicesIcon));
     iconRegistry.addSvgIconLiteral('articles', sanitizer.bypassSecurityTrustHtml(articlesIcon));
     iconRegistry.addSvgIconLiteral('profile', sanitizer.bypassSecurityTrustHtml(profileIcon));
+    iconRegistry.addSvgIconLiteral('logo', sanitizer.bypassSecurityTrustHtml(logoIcon));
   }
 
   links = [
