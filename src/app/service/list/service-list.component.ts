@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceApi } from '../api/service-api.service';
+import { ServiceModel } from '../../shared/models/service.model';
 
 @Component({
   selector: 'app-list',
@@ -7,10 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServiceListComponent implements OnInit {
 
-  constructor() {
+  items: ServiceModel[];
+
+  constructor(private api: ServiceApi) {
   }
 
   ngOnInit() {
+    this.api.query().subscribe(items => this.items = items);
   }
-
 }

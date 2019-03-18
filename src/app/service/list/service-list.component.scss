@@ -1,0 +1,13 @@
+@import "common";
+
+:host {
+  display: block;
+  padding: $spacer * 0.5;
+
+  &::ng-deep {
+    .mat-list-base .mat-list-item .mat-list-avatar, .mat-list-base .mat-list-option .mat-list-avatar {
+      width: 60px;
+      height: 60px;
+    }
+  }
+}

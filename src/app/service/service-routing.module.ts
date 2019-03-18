@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ServiceListComponent } from './list/service-list.component';
 import { LayoutComponent } from '../shared/layout/layout.component';
+import { ServiceShowComponent } from './service-show/service-show.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
       {
         path: 'list',
         component: ServiceListComponent,
+      },
+      {
+        path: ':id',
+        component: ServiceShowComponent,
       },
     ],
   },
