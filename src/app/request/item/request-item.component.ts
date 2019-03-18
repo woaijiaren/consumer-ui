@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { RequestForm } from '../../shared/models/request-form';
+import { RequestFormModel } from '../../shared/models/request-form.model';
 import { RequestStatus } from '../../shared/models/request-status';
 
 @Component({
@@ -13,7 +13,7 @@ export class RequestItemComponent implements OnInit {
   }
 
   @Input()
-  item: RequestForm;
+  item: RequestFormModel;
 
   @Input()
   onlyActive = true;

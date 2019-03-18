@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { RequestForm } from '../../shared/models/request-form';
+import { RequestFormModel } from '../../shared/models/request-form.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -11,11 +11,11 @@ export class RequestFormApi {
   constructor(private http: HttpClient) {
   }
 
-  create(form: RequestForm): Observable<RequestForm> {
-    return this.http.post<RequestForm>('/api/request-forms', form);
+  create(form: RequestFormModel): Observable<RequestFormModel> {
+    return this.http.post<RequestFormModel>('/api/request-forms', form);
   }
 
-  query(): Observable<RequestForm[]> {
-    return this.http.get<RequestForm[]>('/api/request-forms');
+  query(): Observable<RequestFormModel[]> {
+    return this.http.get<RequestFormModel[]>('/api/request-forms');
   }
 }

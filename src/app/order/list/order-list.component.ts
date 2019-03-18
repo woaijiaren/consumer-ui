@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderFormApi } from '../api/order-form-api.service';
-import { OrderForm } from '../../shared/models/order-form';
+import { OrderFormModel } from '../../shared/models/order-form.model';
 
 @Component({
   selector: 'app-list',
@@ -13,7 +13,7 @@ export class OrderListComponent implements OnInit {
   }
 
   cols = ['id'];
-  items: OrderForm[];
+  items: OrderFormModel[];
 
   ngOnInit() {
     this.api.query().subscribe(items => this.items = items);
