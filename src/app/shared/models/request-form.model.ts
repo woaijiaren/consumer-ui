@@ -2,7 +2,7 @@ import { BusinessType } from './business-types';
 import { InterviewChannelType } from './interview-channel-types';
 import { RequestStatus } from './request-status';
 
-export class RequestForm {
+export class RequestFormModel {
   id?: number;
   timeCreated: Date;
   businessType: BusinessType;

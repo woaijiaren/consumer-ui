@@ -1,6 +1,6 @@
-import { Customer } from '../models/customer';
+import { CustomerModel } from '../models/customer.model';
 
-export const customers: Customer[] = [
+export const customers: CustomerModel[] = [
   {
     id: 1,
     name: '张三',
@@ -8,6 +8,6 @@ export const customers: Customer[] = [
   },
 ];
 
-export function customerById(id: number): Customer {
+export function customerById(id: number): CustomerModel {
   return customers.find(it => it.id === id);
 }

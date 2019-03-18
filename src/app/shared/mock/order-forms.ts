@@ -1,9 +1,9 @@
-import { OrderForm } from '../models/order-form';
+import { OrderFormModel } from '../models/order-form.model';
 import { OrderStatus } from '../models/order-status';
 import { BusinessType } from '../models/business-types';
 import { customerById } from './customers';
 
-export const orderForms: OrderForm[] = [
+export const orderForms: OrderFormModel[] = [
   {
     id: 1,
     timeCreated: new Date(),

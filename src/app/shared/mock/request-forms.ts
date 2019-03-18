@@ -1,9 +1,9 @@
-import { RequestForm } from '../models/request-form';
+import { RequestFormModel } from '../models/request-form.model';
 import { BusinessType } from '../models/business-types';
 import { InterviewChannelType } from '../models/interview-channel-types';
 import { RequestStatus } from '../models/request-status';
 
-export const requestForms: RequestForm[] = [
+export const requestForms: RequestFormModel[] = [
   {
     id: 1,
     timeCreated: new Date('2019-01-01'),

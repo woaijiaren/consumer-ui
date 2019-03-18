@@ -1,4 +1,4 @@
-export class Worker {
+export class WorkerModel {
   id?: number;
   name: string;
   birthday: Date;
