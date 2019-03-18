@@ -6,6 +6,7 @@
     "start": "node $NODE_DEBUG_OPTION ./node_modules/.bin/ng serve --plugin ~build/plugin.js",
     "build": "ng build --plugin ~build/plugin.js --prod",
     "test": "ng test",
+    "md": "prerender mirror temp --md",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
