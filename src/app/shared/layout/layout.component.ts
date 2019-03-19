@@ -2,6 +2,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 // @ts-ignore
+import * as requestsIcon from '!!raw-loader!./icons/requests.svg';
+// @ts-ignore
 import * as ordersIcon from '!!raw-loader!./icons/orders.svg';
 // @ts-ignore
 import * as servicesIcon from '!!raw-loader!./icons/services.svg';
@@ -19,6 +21,7 @@ import * as logoIcon from '!!raw-loader!./icons/logo.svg';
 })
 export class LayoutComponent implements OnInit, OnDestroy {
   constructor(private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer) {
+    iconRegistry.addSvgIconLiteral('requests', sanitizer.bypassSecurityTrustHtml(requestsIcon));
     iconRegistry.addSvgIconLiteral('orders', sanitizer.bypassSecurityTrustHtml(ordersIcon));
     iconRegistry.addSvgIconLiteral('services', sanitizer.bypassSecurityTrustHtml(servicesIcon));
     iconRegistry.addSvgIconLiteral('articles', sanitizer.bypassSecurityTrustHtml(articlesIcon));
@@ -27,6 +30,11 @@ export class LayoutComponent implements OnInit, OnDestroy {
   }
 
   links = [
+    {
+      path: '/requests',
+      icon: 'requests',
+      label: '预约',
+    },
     {
       path: '/services',
       icon: 'services',
