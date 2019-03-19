@@ -7,19 +7,21 @@ import { RequestStatusPipe } from './pipes/request-status.pipe';
 import { MaterialModule } from '../material/material.module';
 import { LayoutComponent } from './layout/layout.component';
 import { RouterModule } from '@angular/router';
+import { OrderStatusPipe } from './pipes/order-status.pipe';
 
 @NgModule({
-  declarations: [
-    BusinessTypePipe,
-    InterviewChannelTypePipe,
-    RequestStatusPipe,
-    LayoutComponent,
-  ],
   imports: [
     CommonModule,
     MaterialModule,
     RouterModule,
     UiModelModule,
+  ],
+  declarations: [
+    BusinessTypePipe,
+    InterviewChannelTypePipe,
+    RequestStatusPipe,
+    LayoutComponent,
+    OrderStatusPipe,
   ],
   exports: [
     BusinessTypePipe,
@@ -27,6 +29,7 @@ import { RouterModule } from '@angular/router';
     RequestStatusPipe,
     LayoutComponent,
     UiModelModule,
+    OrderStatusPipe,
   ],
 })
 export class SharedModule {

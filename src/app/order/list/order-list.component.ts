@@ -12,7 +12,6 @@ export class OrderListComponent implements OnInit {
   constructor(private api: OrderFormApi) {
   }
 
-  cols = ['id'];
   items: OrderFormModel[];
 
   ngOnInit() {

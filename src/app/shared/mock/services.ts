@@ -12,3 +12,7 @@ export const services: ServiceModel[] = [
     bannerUrl: require('./services/hourly-worker/banner.jpg'),
   },
 ];
+
+export function serviceById(id: number): ServiceModel {
+  return services.find(it => it.id === id);
+}

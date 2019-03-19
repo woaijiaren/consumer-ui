@@ -9,7 +9,7 @@ export enum OrderStatus {
   Rated = 'Rated',
 }
 
-const orderStatusList = new EnumMap<OrderStatus>([
+export const orderStatusList = new EnumMap<OrderStatus>([
   {
     id: OrderStatus.Created,
     title: '已创建',
