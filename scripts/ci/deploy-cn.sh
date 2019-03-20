@@ -24,9 +24,9 @@ rm -fr /tmp/preview || true
 
 git clone https://asnowwolf:${GITHUB_ACCESS_TOKEN}@github.com/woaijiaren/consumer-ui-preview.git /tmp/preview
 
-cd /tmp/preview
+cp -r ./dist/consumer-ui/* /tmp/preview
 
-cp -r ../dist/consumer-ui/* .
+cd /tmp/preview
 
 cp index.html 404.html
 
