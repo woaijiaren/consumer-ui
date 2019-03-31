@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { RequestFormApi } from '../api/request-form-api.service';
+import { RequestFormApi } from '../../core/api/request-form-api.service';
 
 @Component({
   selector: 'app-home',

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ServiceApi } from '../api/service-api.service';
+import { ServiceApi } from '../../core/api/service-api.service';
 import { ServiceModel } from '../../shared/models/service.model';
 import { ActivatedRoute } from '@angular/router';
 import { map, switchMap, tap } from 'rxjs/operators';

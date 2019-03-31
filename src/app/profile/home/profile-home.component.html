@@ -1,1 +1,55 @@
-建设中
+<div class="mat-toolbar mat-primary">
+  <mat-list class="user-info">
+    <mat-list-item>
+      <img [src]="me.avatar" matListAvatar/>
+      <h3 matLine>{{me.name}}</h3>
+      <p matLine>{{me.maskedPhone}}</p>
+      <mat-icon>chevron_right</mat-icon>
+    </mat-list-item>
+  </mat-list>
+</div>
+
+<mat-list class="menu major">
+  <mat-list-item>
+    <mat-icon matListIcon svgIcon="balance"></mat-icon>
+    <p matLine>余额</p>
+    <p>0 元</p>
+    <mat-icon>chevron_right</mat-icon>
+  </mat-list-item>
+  <mat-list-item>
+    <mat-icon matListIcon svgIcon="package"></mat-icon>
+    <p matLine>套餐</p>
+    <p>0 个</p>
+    <mat-icon>chevron_right</mat-icon>
+  </mat-list-item>
+  <mat-list-item>
+    <mat-icon matListIcon svgIcon="coupon"></mat-icon>
+    <p matLine>优惠券</p>
+    <p>0 张</p>
+    <mat-icon>chevron_right</mat-icon>
+  </mat-list-item>
+  <mat-list-item>
+    <mat-icon matListIcon svgIcon="point"></mat-icon>
+    <p matLine>积分</p>
+    <p>12333</p>
+    <mat-icon>chevron_right</mat-icon>
+  </mat-list-item>
+</mat-list>
+
+<mat-list class="minor menu">
+  <mat-list-item>
+    <mat-icon matListIcon svgIcon="feedback"></mat-icon>
+    <p matLine>意见反馈</p>
+    <mat-icon>chevron_right</mat-icon>
+  </mat-list-item>
+  <mat-list-item>
+    <mat-icon matListIcon svgIcon="about"></mat-icon>
+    <p matLine>关于我们</p>
+    <mat-icon>chevron_right</mat-icon>
+  </mat-list-item>
+  <mat-list-item>
+    <mat-icon matListIcon svgIcon="logout"></mat-icon>
+    <p matLine>退出登录</p>
+    <mat-icon>chevron_right</mat-icon>
+  </mat-list-item>
+</mat-list>

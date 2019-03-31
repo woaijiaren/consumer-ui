@@ -2,5 +2,44 @@
 
 :host {
   display: block;
-  padding: $spacer * 0.5;
+  flex: auto;
+
+  background: #f7f7f7;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.user-info {
+  * {
+    color: white !important;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+}
+
+.menu {
+  mat-list-item {
+    background: white;
+    border-bottom: 1px solid #ddd;
+
+    mat-icon {
+      color: #ddd;
+
+      &.mat-list-icon {
+        color: black;
+      }
+    }
+  }
+
+  p {
+    white-space: nowrap;
+  }
+}
+
+mat-icon {
+  line-height: 16px;
 }

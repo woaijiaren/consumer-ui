@@ -5,6 +5,7 @@ import { ProfileRoutingModule } from './profile-routing.module';
 import { ProfileHomeComponent } from './home/profile-home.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { SharedModule } from '../shared/shared.module';
+import { MaterialModule } from '../material/material.module';
 
 @NgModule({
   declarations: [ProfileHomeComponent, FeedbackComponent],
@@ -12,6 +13,7 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     ProfileRoutingModule,
     SharedModule,
+    MaterialModule,
   ],
 })
 export class ProfileModule {

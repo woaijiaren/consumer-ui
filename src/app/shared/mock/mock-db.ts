@@ -5,6 +5,7 @@ import { cloneDeep } from 'lodash';
 import { orderForms } from './order-forms';
 import { articles } from './articles';
 import { services } from './services';
+import { users } from './users';
 
 export class MockDb implements InMemoryDbService {
   createDb(reqInfo?: RequestInfo): {} | Observable<{}> | Promise<{}> {
@@ -13,6 +14,7 @@ export class MockDb implements InMemoryDbService {
       'order-forms': cloneDeep(orderForms),
       articles: cloneDeep(articles),
       services: cloneDeep(services),
+      users: cloneDeep(users),
     };
   }
 }

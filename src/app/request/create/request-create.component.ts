@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { RequestFormApi } from '../api/request-form-api.service';
+import { RequestFormApi } from '../../core/api/request-form-api.service';
 import { MatSnackBar } from '@angular/material';
 import { switchMap } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';

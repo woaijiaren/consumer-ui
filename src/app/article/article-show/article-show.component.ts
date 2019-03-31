@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticleApi } from '../api/article-api.service';
+import { ArticleApi } from '../../core/api/article-api.service';
 import { ActivatedRoute } from '@angular/router';
 import { map, switchMap, tap } from 'rxjs/operators';
-import { ArticleModel } from '../api/article.model';
+import { ArticleModel } from '../../shared/models/article.model';
 
 @Component({
   selector: 'app-article-show',
