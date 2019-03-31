@@ -23,7 +23,7 @@ export const services: ServiceModel[] = [
     id: 5,
     name: '育儿嫂',
     iconUrl: '',
-    brief: '不放心孩子？找个阿姨帮忙吧！',
+    brief: '工作忙亏了孩子？找个阿姨照顾下！',
     description: require('./services/hourly-worker/index.md'),
     bannerUrl: require('./services/yu-er-sao/banner.jpg'),
   },
