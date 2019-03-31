@@ -63,4 +63,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
   }
 
+  forceReload(): void {
+    location.reload(true);
+  }
 }
