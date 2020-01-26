@@ -17,23 +17,23 @@ const routes: Routes = [
       },
       {
         path: 'requests',
-        loadChildren: './request/request.module#RequestModule',
+        loadChildren: () => import('./request/request.module').then(m => m.RequestModule),
       },
       {
         path: 'orders',
-        loadChildren: './order/order.module#OrderModule',
+        loadChildren: () => import('./order/order.module').then(m => m.OrderModule),
       },
       {
         path: 'services',
-        loadChildren: './service/service.module#ServiceModule',
+        loadChildren: () => import('./service/service.module').then(m => m.ServiceModule),
       },
       {
         path: 'profile',
-        loadChildren: './profile/profile.module#ProfileModule',
+        loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule),
       },
       {
         path: 'articles',
-        loadChildren: './article/article.module#ArticleModule',
+        loadChildren: () => import('./article/article.module').then(m => m.ArticleModule),
       },
     ],
   },
