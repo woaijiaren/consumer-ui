@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node ./node_modules/.bin/ng serve --plugin ~build/plugin.js",
-    "build": "ng build --plugin ~build/plugin.js --prod",
+    "start": "node ./node_modules/.bin/ng serve",
+    "build": "ng build --prod",
     "test": "ng test",
     "md": "prerender mirror temp --md",
     "lint": "ng lint",
@@ -12,6 +12,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-builders/custom-webpack": "^8.0.2",
     "@angular/animations": "~8.2.14",
     "@angular/cdk": "~8.2.3",
     "@angular/common": "~8.2.14",

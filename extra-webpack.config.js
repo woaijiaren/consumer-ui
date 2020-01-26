@@ -1,0 +1,29 @@
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
+
+module.exports = function (cfg) {
+  cfg.plugins.push(new ImageminPlugin({test: 'src/app/shared/mock/**'}));
+
+  const fileLoader = cfg.module.rules.find(it => it.loader === 'file-loader');
+  const jpegLoader = {
+    loader: fileLoader.loader,
+    options: fileLoader.options,
+    test: /\.jpeg$/,
+  };
+
+  const markdownLoader = {
+    test: /\bmock\/.*\.md$/,
+    use: [
+      {loader: 'html-loader'},
+      {loader: 'markdown-loader'},
+    ],
+  };
+  const htmlLoader = {
+    test: /\bmock\/.*\.html$/,
+    use: [
+      {loader: 'html-loader'},
+    ],
+  };
+  cfg.module.rules.push(markdownLoader, jpegLoader, htmlLoader);
+
+  return cfg;
+};
