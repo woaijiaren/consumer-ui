@@ -2,17 +2,17 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 // @ts-ignore
-import * as requestsIcon from '!!raw-loader!./icons/requests.svg';
+import requestsIcon from '!!raw-loader!./icons/requests.svg';
 // @ts-ignore
-import * as ordersIcon from '!!raw-loader!./icons/orders.svg';
+import ordersIcon from '!!raw-loader!./icons/orders.svg';
 // @ts-ignore
-import * as servicesIcon from '!!raw-loader!./icons/services.svg';
+import servicesIcon from '!!raw-loader!./icons/services.svg';
 // @ts-ignore
-import * as articlesIcon from '!!raw-loader!./icons/articles.svg';
+import articlesIcon from '!!raw-loader!./icons/articles.svg';
 // @ts-ignore
-import * as profileIcon from '!!raw-loader!./icons/profile.svg';
+import profileIcon from '!!raw-loader!./icons/profile.svg';
 // @ts-ignore
-import * as logoIcon from '!!raw-loader!./icons/logo.svg';
+import logoIcon from '!!raw-loader!./icons/logo.svg';
 
 @Component({
   selector: 'app-layout',
@@ -20,15 +20,6 @@ import * as logoIcon from '!!raw-loader!./icons/logo.svg';
   styleUrls: ['./layout.component.scss'],
 })
 export class LayoutComponent implements OnInit, OnDestroy {
-  constructor(private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer) {
-    iconRegistry.addSvgIconLiteral('requests', sanitizer.bypassSecurityTrustHtml(requestsIcon));
-    iconRegistry.addSvgIconLiteral('orders', sanitizer.bypassSecurityTrustHtml(ordersIcon));
-    iconRegistry.addSvgIconLiteral('services', sanitizer.bypassSecurityTrustHtml(servicesIcon));
-    iconRegistry.addSvgIconLiteral('articles', sanitizer.bypassSecurityTrustHtml(articlesIcon));
-    iconRegistry.addSvgIconLiteral('profile', sanitizer.bypassSecurityTrustHtml(profileIcon));
-    iconRegistry.addSvgIconLiteral('logo', sanitizer.bypassSecurityTrustHtml(logoIcon));
-  }
-
   links = [
     {
       path: '/requests',
@@ -56,6 +47,15 @@ export class LayoutComponent implements OnInit, OnDestroy {
       label: '我的',
     },
   ];
+
+  constructor(private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer) {
+    iconRegistry.addSvgIconLiteral('requests', sanitizer.bypassSecurityTrustHtml(requestsIcon));
+    iconRegistry.addSvgIconLiteral('orders', sanitizer.bypassSecurityTrustHtml(ordersIcon));
+    iconRegistry.addSvgIconLiteral('services', sanitizer.bypassSecurityTrustHtml(servicesIcon));
+    iconRegistry.addSvgIconLiteral('articles', sanitizer.bypassSecurityTrustHtml(articlesIcon));
+    iconRegistry.addSvgIconLiteral('profile', sanitizer.bypassSecurityTrustHtml(profileIcon));
+    iconRegistry.addSvgIconLiteral('logo', sanitizer.bypassSecurityTrustHtml(logoIcon));
+  }
 
   ngOnInit(): void {
   }

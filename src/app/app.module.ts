@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { MockDb } from './shared/mock/mock-db';
 import { registerLocaleData } from '@angular/common';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 registerLocaleData(localeCn, 'zh-Hans', localeCnExtra);
 
@@ -23,6 +25,7 @@ registerLocaleData(localeCn, 'zh-Hans', localeCnExtra);
     BrowserAnimationsModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(MockDb, { passThruUnknownUrl: true, delay: 0 }),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'zh-Hans' }],
   bootstrap: [AppComponent],

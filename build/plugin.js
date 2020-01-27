@@ -4,13 +4,6 @@ exports.default = {
   config(cfg) {
     cfg.plugins.push(new ImageminPlugin({test: 'src/app/shared/mock/**'}));
 
-    const fileLoader = cfg.module.rules.find(it => it.loader === 'file-loader');
-    const jpegLoader = {
-      loader: fileLoader.loader,
-      options: fileLoader.options,
-      test: /\.jpeg$/,
-    };
-
     const markdownLoader = {
       test: /\bmock\/.*\.md$/,
       use: [
@@ -24,7 +17,7 @@ exports.default = {
         {loader: 'html-loader'},
       ],
     };
-    cfg.module.rules.push(markdownLoader, jpegLoader, htmlLoader);
+    cfg.module.rules.push(markdownLoader, htmlLoader);
 
     return cfg;
   },

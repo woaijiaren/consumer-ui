@@ -170,5 +170,8 @@
       }
     }
   },
-  "defaultProject": "consumer-ui"
+  "defaultProject": "consumer-ui",
+  "cli": {
+    "analytics": false
+  }
 }

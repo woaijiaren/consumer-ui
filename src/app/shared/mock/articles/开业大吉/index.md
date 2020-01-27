@@ -7,9 +7,3 @@
 亲自前往 **通州富力中心 B01 栋 734 室** 面谈。
 
 可承接全北京范围内的业务。
-
-![](./WechatIMG25.jpeg)
-
-![](./WechatIMG26.jpeg)
-
-![](./WechatIMG27.jpeg)
